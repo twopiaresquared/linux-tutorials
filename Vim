@@ -1,0 +1,102 @@
+Vim
+
+Installation:
+vim is usually pre-installed package on your linux machine. You can cehck using the following command:
+$ vim --version
+If not you can install it on your own using the following command:
+$ sudo apt install vim
+To create a file and open vim:
+$ touch filename
+$ vim filename 
+Modes:
+1. Normal (default mode)
+Let's you navigate and manipulate text
+
+2. Insert (i)
+Acts like a text editor and lets you write text
+
+You can know the status of which mode you're in in the status bar locates at thebottom of the terminal
+"Esc" key is used to na navigate between modes
+For example:
+Let's say you open a file using vim
+Normal mode would be your default mode, this will let you navigate through the text but won't let you edit it.
+Press "i"
+This will change the mode to Insert mode. Now, you can insert text.
+Once you're done, press "esc", this will take you back to the normal mode.
+
+Navigation in normal mode:
+You can either use your arrow key to navigate up,down, left and right ot you can use 'h','j','k','l'
+h= right
+l= left
+j= down
+k= up
+
+Or you can combine them with numbers.
+Example: If you want to move 3 characters to the right the you can press 2l (spaces are counted as charaters.)
+
+You can also navigate at the beginning, end of the next word or beginning of the previous words.
+'W' = beginning of the next word
+'E' = end of the next word
+'B' = start of the previous word
+
+Insert text repeatedly:
+Say you want to insert '-' 30 times you don't really need to type - 30 times. Use the following command:
+30i Esc
+1) Press 30 in normal mode
+2) Press i to enter Insert mode
+3) Charachter '-'
+4) Esc 
+Output
+------------------------------
+
+Try another example:
+type go 20 times:
+20igo Esc
+gogogogogogogogogogogogogogogogogogogogo
+
+Find:
+Say you want to find the next occurrence of a character on a given line
+Press f'char'. Example: fq
+Combine with numbers:
+Find 3rd occurence of q: 3fq
+
+Navigate to the beginning of the file: 'gg'
+Navigate to the end of the file: 'G'
+Navigate to a specific line: linenumber 'G'. Example: Go to line 2: 2G
+Navigate to the beginning of the line: '0'
+Navigatre to the end of the line: '$'
+
+Find 
+Find text
+/text will take you to the first occurrence of 'text'
+'n' will take you to the next occurence of text
+'N' will take you to the previous occurence of text
+
+Replace:
+:%s/'replace'/'replacement/'gc'
+':' = opens command line
+'%s' = string
+'replace' = the string which you want to replace
+'replacement' = the string with which you want to replace the previous string
+'gc' - execute replace
+After you press enter you will get options of y,a and so on.'y' means replace the first string found and 'a' means replace all the strings found.
+
+To enter a new line in normal mode press 'o', this will establish a new line and enter Insert mode
+To delete a character character under the cursor press 'x'
+Delete the entire word to the right of the cursor: dw (keep repeating? press '.' Delete two words: d2w (keep repeating? press '.' 
+Replace a sing character: Move the cursor to the character you wat to replace and press 'r' followed byt the characters replacement.
+
+
+Visual mode 'v'
+Lets you select text with navigation keys and then you can perform the aforementioned operations.
+
+Some command line functions:
+':w' - Save
+':wq' - Save and quit
+':q' - Quit
+':q!' - Quit without saving
+
+Did some wrong? 
+Press 'u' in normal mode to undo and 'Ctrl + u' in Insert mode.
+
+More information for Vim in command line- press ':help' 

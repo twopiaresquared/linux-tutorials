@@ -1,0 +1,73 @@
+stdout:
+echo text
+echo text > filename (overwrites the file)
+echo text >> filename (appends the file at the end)
+
+stdin:
+"<" for input
+cat < filename (inputs to cat)
+cat < filename > destination_filename (cat takes filename input and output goes to destination_filename)
+
+pipe "|" (Combining two or more commands):
+Let's try with any directory, say /etc
+
+$ ls -la /etc
+The list is huge for this directory. You can go through it block after block by combinint the command "less" with ls -la
+$ ls -la | less
+
+tee:
+Copies output of the command to a file
+$ ls | tee sample.txt
+This will first show you the listed items of your directory and copy the output to the sample.txt file.
+
+cut and paste:
+Let's try this with an example-
+Create file sample.txt and type the following text in it
+kali@HAL-9000:~/Documents/learn-linux/implementations$ echo Beethoven and Maggi are best friends > sample.txt 
+
+Syntax and flags
+cut -c 5-10 sample.tx (This will cut the characters from the file sample.txt and display them. If we mention '5' instead of '5-10' then the it will copy the fifth charachter. Spaces are counted as characters.)
+cut -f 5 sample.txt (Cuts the character field-wise
+Examples-
+kali@HAL-9000:~/Documents/learn-linux/implementations$ cut -c 5-10 sample.txt 
+hoven 
+kali@HAL-9000:~/Documents/learn-linux/implementations$ cut -f 1 sample.txt 
+Beethoven and Maggi are best friends
+kali@HAL-9000:~/Documents/learn-linux/implementations$ 
+
+
+head and tail:
+$ head /Documents/learn-linux/implementations/sample.txt
+Head command by default willl show us the first 10 lines of the text.
+$ head -n 20 /path
+-n flag is the number of lines. In the above example it will show us the first 20 lines of the code.
+
+$ tail /path
+Shows the last ten lines of the code
+$ tail -n 10 /path
+Similar to the head command -n flag is the number of lines flag.
+$ tail -f /path
+-f is the "follow" flag and will follow the file as it is being appended and the content is added to it.
+
+sort:
+$ sort filename (Sorts the file using its first character in ascending order)
+$ sort -r filename (Reverses the sort)
+$ sort -n filename (Sorts the filename numberically in the ascending order)
+
+uniq: 
+$ uniq filename (Removes the duplicates in the file
+$ uniq -c filename (Counts the number of sduplicates in the file)
+$ uniq -u filename (Gives us the none duplicate values)
+$ uniq -d )filename (Gives us the duplicate values in the file)
+
+wc (Word Count):
+$ wc filename (Gives you the numerical word count of the file)
+
+nl (Number of lines):
+$ nl filename (Goves you the numeber of lines in the file)
+
+grep (Search command):
+grep Beethoven sample.txt (Looks for the string "Beethoven" in the file)
+grep -i beethove sample.txt (Looks pattern of the string disregarding its case)
+
+

@@ -1,0 +1,180 @@
+pwd (Print current working directory)
+kali@HAL-9000:~/Documents/learn-linux/Tutorials$ pwd
+/home/kali/Documents/learn-linux/Tutorials
+
+
+
+cd (Changes directory)
+
+Changes directory to a mentioned path:
+kali@HAL-9000:~/Documents/learn-linux/Tutorials$ cd /home/kali/Downloads/
+kali@HAL-9000:~/Downloads$
+
+Changes directory included in the current directory
+kali@HAL-9000:~/Documents/learn-linux/Tutorials$ cd /home/kali/Downloads/
+kali@HAL-9000:~/Downloads$
+
+Go to parent directory: cd ..
+kali@HAL-9000:~/Documents/learn-linux$ cd ..
+kali@HAL-9000:~/Documents$
+
+Home directory: cs ~
+kali@HAL-9000:~/Documents$ cd ~
+kali@HAL-9000:~$
+
+Previous directory
+kali@HAL-9000:~/Documents/learn-linux$ cd -
+/home/kali/Documents
+
+
+
+
+ls (List Directory)
+list items in the current directory: ls
+kali@HAL-9000:~$ ls 
+ Desktop     Downloads   Pictures   snap        Videos
+ Documents   Music       Public     Templates  'VirtualBox VMs'
+
+All files in the directory- ls -a
+-a flag lists all the files in the directory
+Starting with "." is a hidden file and starting with ".." is a hiddent directory
+
+kali@HAL-9000:~/Documents$ ls -a
+.  ..  git  learn-linux  learn-python
+
+Details of all the files: ls -l
+-l flag (long) gives us all the detils of the files listen int eh given directory
+
+kali@HAL-9000:~/Documents$ ls -l
+total 12
+drwxrwxr-x 3 kali kali 4096 May 20 08:08 git
+drwxrwxr-x 4 kali kali 4096 May 21 15:18 learn-linux
+drwxrwxr-x 3 kali kali 4096 May 21 04:26 learn-python
+
+Column 1: type of file and permissions
+d- file type
+rwx:
+Read permission(first character)
+"-" : file cannot be read
+r - file can be read
+Write permission (second character)
+"-" : file cannot be modified
+w " file can be modified
+Execute permission (third character)
+"-" : file cannot be executed
+x : file can be exected
+Column 2: Number of users
+Column 3: Username
+Column 4: User Group
+Column 5: Size (in bytes)
+Column 6,7,8: Creation Month-Day-Time
+Column 9: Name of the file
+
+
+touch: Create an empty file
+kali@HAL-9000:~/Documents/learn-linux$ touch sample.txt
+
+
+file : Tell us file type 
+In Linux it is not necessary that the file extension tells us about the file type. .gif could be a text file
+kali@HAL-9000:~/Documents/learn-linux/implementations$ file sample.txt 
+sample.txt: ASCII text
+
+
+cat: Read the contents of the file
+kali@HAL-9000:~/Documents/learn-linux/implementations$ cat sample.txt 
+
+$history: history of the recent commands used
+
+$clear: clears the shell
+
+cp (Copy)
+cp file /destination
+-r : recursively copies files in the same directory
+-i : prompts you before overwritting a file with the same name,
+kali@HAL-9000:~/Documents/learn-linux/implementations$ cp bananas.txt /home/kali/Documents/
+
+mv (Move)
+Move: mv file /desination
+Rename: mv old filename newfilename
+-i : prompts overwiting
+-b : creates backup before moving the files (incase you overwrite it)
+kali@HAL-9000:~/Documents/learn-linux/implementations$ mv bananas.txt /home/kali/Documents/
+
+
+mkdir (Make directoty)
+mkdir directoryname
+-p(parent flag :  creates subdirectories at the same time
+mkdir -p music/Beethoven/Symohonies
+
+rm (Remove)
+rm filename
+-f : force remove
+-i : prompt before removing
+-r : recursively remove from subdrectories
+Remove directory
+rmdir /directory
+
+find (Find a file)
+find /directory -flag attribute
+-name  : find using the name of the file
+-type find using the type (d-directory,f-file)
+$ find /home/kali/Documents -name bananas.txt
+$ find /home -type d -name Beethoven
+
+help
+help commandname
+kali@HAL-9000:~$ help echo
+echo: echo [-neE] [arg ...]
+    Write arguments to the standard output.
+    
+    Display the ARGs, separated by a single space character and followed by a
+    newline, on the standard output.
+    
+    Options:
+      -n	do not append a newline
+      -e	enable interpretation of the following backslash escapes
+      -E	explicitly suppress interpretation of backslash escapes
+    
+    `echo' interprets the following backslash-escaped characters:
+      \a	alert (bell)
+      \b	backspace
+      \c	suppress further output
+      \e	escape character
+      \E	escape character
+      \f	form feed
+      \n	new line
+      \r	carriage return
+      \t	horizontal tab
+      \v	vertical tab
+      \\	backslash
+      \0nnn	the character whose ASCII code is NNN (octal).  NNN can be
+    		0 to 3 octal digits
+      \xHH	the eight-bit character whose value is HH (hexadecimal).  HH
+    		can be one or two hex digits
+      \uHHHH	the Unicode character whose value is the hexadecimal value HHHH.
+    		HHHH can be one to four hex digits.
+      \UHHHHHHHH the Unicode character whose value is the hexadecimal value
+    		HHHHHHHH. HHHHHHHH can be one to eight hex digits.
+
+
+man (Manual for commands)
+try $ man ls
+
+whatis (Short description of the command)
+kali@HAL-9000:~$ whatis man
+man (7)              - macros to format man pages
+man (1)              - an interface to the system reference manuals
+
+whereis (search)
+whereis /directoryname filename
+
+exit (Exit from the process)
+reboot (Reboot Machine)
+shutdown (Shutdown Machine)
+
+
+
+
+
+
