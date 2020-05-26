@@ -1,0 +1,30 @@
+Super User
+You can execute commands as a super user using the keyword sudo.
+For example:
+$ sudo apt update
+
+You can also run commands as a super user by logging in as a super user using the keyword 'su'
+ $ su -
+Password:
+
+Users are identified using their UID. Every user is mapped to a UID. This information is stored in etc/passwd
+ $ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+root = username
+UID = 0
+
+User authentication information; /etc/shadow
+$ cat /etc/shadow
+This gives you the information like encrypted user password and the last date of change (expressed in no. of days since Jan 1, 1970), min. password age, max password age, password warning period, password inactivity period, account expiry and reserved field.
+
+Group information:
+$ cat /etc/group
+Information about group name, GID, group password, list of users.
+
+Some useful user management tool-
+Adding users:
+$ sudo useradd username
+REmove user:
+$ sudo userdel username
+Password change:
+$ passwd username (if you are logged in as root then you can change passwords for other users)

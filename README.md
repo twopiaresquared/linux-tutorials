@@ -6,7 +6,6 @@ Basic tutorials for linux
 * Vim
 
 Soon to come:
-1. Basics
 * User management
 * File and directory permission
 * Packages
