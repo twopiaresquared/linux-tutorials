@@ -1,0 +1,65 @@
+File permission:
+
+twopiaresquared@HAL-9000:~/Documents/git$ ls -l
+total 16
+drwxrwxr-x 4 twopiaresquared twopiaresquared 4096 May 27 15:09 linux-tutorials
+drwxrwxr-x 3 twopiaresquared twopiaresquared 4096 May 24 19:52 packet-sniffer
+drwxrwxr-x 5 twopiaresquared twopiaresquared 4096 May 26 03:24 sherlock
+drwxrwxr-x 6 twopiaresquared twopiaresquared 4096 May 20 08:08 wifite2
+
+Format-
+
+d | rwx | rwx | r-x
+
+d = directory
+r = read
+w = write
+x = executable program
+- = empty
+
+First column : file type
+Second column : User "kali" has read, write and execute permissions
+Third column :  User group kali has read, write and execute permissions
+Foursth column: Other users have read and write permissions.
+
+Let us try modifying these permissions now-
+To add a permission: $ chmod u+(r,w,x) filename
+To remove a permission: $ chmod u-(r,w,x) filename
+To add multiple permissions: $ chmod ug+w filename
+
+Numerical representations of permission:
+4 = read
+2 = write
+1 = execute
+
+Combine permissions:
+7 = 4+2+1 (read,write and exec)
+5= 4+1 (read and exec)
+
+Example:
+-rw-rw-r-- 1 twopiaresquared twopiaresquared   412 May 26 15:03 README.md
+twopiaresquared@HAL-9000:~/Documents/git/linux-tutorials$ chmod u+x README.md 
+-rwxrw-r-- 1 twopiaresquared twopiaresquared   412 May 26 15:03 README.md
+
+twopiaresquared@HAL-9000:~/Documents/git/linux-tutorials$ chmod u-x README.md 
+-rw-rw-r-- 1 twopiaresquared twopiaresquared   412 May 26 15:03 README.md
+
+
+Owenership permission:
+
+$ sudo chown kali filename (owner of the file 'filename' is now kali)
+$ sudo chgrp kali filename (owner of the file 'filename' is now group kali)
+$ sudo chown kali+kali filename (owner of the file 'filename; is now user kali and usergroup ubuntu)
+
+REvoke permission (umask)
+Syntax-
+$ sudo umask 021 filename
+
+3 bit permission meaning:
+In the above example in the first bit of the digit means that the 'user' has acces to all the permissions. 2nd bit means that usergroup's write permission was revoke and the 3rd bit means that the 'other users' executable permission was revoked.
+
+Something for root user:
+$ sudo chmod +t dir/file
+$ sudo chmod 1755 dir/file      (1 is significant here)
+
+Both t and 1 in the above syntax means the only the root user of the owner are allowed to modify permissions.
