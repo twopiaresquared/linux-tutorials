@@ -1,0 +1,42 @@
+Processes- Program running on your machine
+$ ps
+kali@HAL-9000:~$ ps
+    PID TTY          TIME CMD
+  26264 pts/1    00:00:00 bash
+  26270 pts/1    00:00:00 ps
+kali@HAL-9000:~$
+
+PID: Process Id
+TTY: Terminal associated with the process
+TIME: Total CPU usage
+CMD: Name of the command
+STAT: The status of the process (r- running, waiting for cpu s- sleep can be interrupted, d- sleep cannot be interrupted, z- zombie process (no parent),t- stopped)
+
+$ ps aux
+a- all the processes running(including other users)
+u- details of the processes
+x- processes running without TTY
+
+Need real time information about the processes?
+Use $ top
+
+Want to kill a process? Use Signals
+SIGHUP: Hangup NOHUP is don't hang up
+Example: Say you want to start firefox 
+Easy way is that you type firefox in the terminal and it beging. However, your terminal is handling that process and it cannot do anything else. We use the nohup command.
+$ nohup firefox &
+ and the firefox won't interfere with the terminal.'&' means the process will run in background and keep the shell running)
+
+SIGINT: Ctrl + C (In short the most gentle way to kill the process.
+
+SIGKILL: $ kill processid (does what it says)
+
+You can actually control the priority of the processes, but you'll have to be   "nice"
+If you type in $ top it will have a column "NI". This is the niceness level of the process right now. You can change the nicenes of the new process or renice an existing process
+Example:
+
+$ nice -n 10 apt upgrage
+$ renice 10 -p pid
+
+Want to know where the process are?
+$ ls /proc

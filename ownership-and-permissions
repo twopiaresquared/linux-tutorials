@@ -1,11 +1,11 @@
 File permission:
 
-twopiaresquared@HAL-9000:~/Documents/git$ ls -l
+kali@HAL-9000:~/Documents/git$ ls -l
 total 16
-drwxrwxr-x 4 twopiaresquared twopiaresquared 4096 May 27 15:09 linux-tutorials
-drwxrwxr-x 3 twopiaresquared twopiaresquared 4096 May 24 19:52 packet-sniffer
-drwxrwxr-x 5 twopiaresquared twopiaresquared 4096 May 26 03:24 sherlock
-drwxrwxr-x 6 twopiaresquared twopiaresquared 4096 May 20 08:08 wifite2
+drwxrwxr-x 4 kali kali 4096 May 27 15:09 linux-tutorials
+drwxrwxr-x 3 kali kali 4096 May 24 19:52 packet-sniffer
+drwxrwxr-x 5 kali kali 4096 May 26 03:24 sherlock
+drwxrwxr-x 6 kali kali 4096 May 20 08:08 wifite2
 
 Format-
 
@@ -37,12 +37,12 @@ Combine permissions:
 5= 4+1 (read and exec)
 
 Example:
--rw-rw-r-- 1 twopiaresquared twopiaresquared   412 May 26 15:03 README.md
-twopiaresquared@HAL-9000:~/Documents/git/linux-tutorials$ chmod u+x README.md 
--rwxrw-r-- 1 twopiaresquared twopiaresquared   412 May 26 15:03 README.md
+-rw-rw-r-- 1 kali kali   412 May 26 15:03 README.md
+kali@HAL-9000:~/Documents/git/linux-tutorials$ chmod u+x README.md 
+-rwxrw-r-- 1 kali kali   412 May 26 15:03 README.md
 
-twopiaresquared@HAL-9000:~/Documents/git/linux-tutorials$ chmod u-x README.md 
--rw-rw-r-- 1 twopiaresquared twopiaresquared   412 May 26 15:03 README.md
+kali@HAL-9000:~/Documents/git/linux-tutorials$ chmod u-x README.md 
+-rw-rw-r-- 1 kali kali   412 May 26 15:03 README.md
 
 
 Owenership permission:
