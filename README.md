@@ -9,6 +9,7 @@ Basic tutorials for linux
 * processes
 * packages
 
+Soon to come
 2.Intermediate Linux
 * Files system
 * Kernel

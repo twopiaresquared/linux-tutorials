@@ -1,0 +1,68 @@
+Filesystem hieracrchy:
+
+By now you should now that everything on Linux is in form of a file system.
+
+/ - root directory. The entire file system is under this directory
+
+/bin - (binaries) includes basic programs and commands such as ls, cp.
+
+/boot - boot load
+
+/dev - device files
+
+/etc - core system configuration files
+
+/home - directories of a particular user
+
+/lib - library files
+
+/media - usually a pointer for removable drives
+
+/mnt - mounted file systems
+
+/opt - optional softwares
+
+/proc - currently running processes
+
+/root - root user home directory
+
+/run - runnig systems since the last boot
+
+/sbin - system binaries
+
+/srv - site-specific data
+
+/tmp - temporary file storage
+
+/usr - universal resources
+
+/var - variables (caches, logging)
+
+Types of file systems supported by linux
+ext4- most common and current.
+XFS - journaing type file system. 
+NTFS and FAT- Windows filesystem
+HFS+ - Mac filesystem
+
+Partitions and disc info:
+ To get the information about the components of disc and partitions of your system you can run the following command.
+
+$ sudo parted -l
+
+To partition a disk
+$ sudo parted
+$ select /path
+#partition
+$ mkpart primary start_address end address
+$ mkpart primary 123 7891
+#resize
+$ resize partition_number start_address end_address
+
+Create a filesystem
+$ sudo mkfs -t /path  
+#mount and unmount a filesystem (example a usbdrive)
+$ sudo umount /path
+$ sudo umount /path
+
+Check a filesys
+$ sudo fschk /path
