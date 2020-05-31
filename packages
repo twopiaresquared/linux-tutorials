@@ -1,0 +1,30 @@
+Packages:
+Compression and archives packages- tar and zip
+
+Compress a file:
+$ gzip filename
+Decompress  package:
+$ gunzip filename.gz
+
+For multiple files use tar:
+Create an archive:
+
+$ tar czf archivename.tar file1 file2 file3
+c- create
+z- display the process of archiving
+f- preceding the filename of the archive
+
+Unpack and archive:
+$ tar xvf archivename.tar
+x- extract
+
+How to install packages?
+The most common package managements are apt, yum, rpg , dpkg
+
+Install a package using apt and yum
+$ apt install packagename
+$ yum install packagename
+
+Remove a package
+$ apt remove packagename
+$ apt remove packagename

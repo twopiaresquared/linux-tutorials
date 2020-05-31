@@ -1,14 +1,13 @@
 # linux-tutorials
 Basic tutorials for linux
 1. Basics
-* Basic Commands
-* Text Manipulations
+* basic-Commands
+* text-manipulations
 * Vim
-
-Soon to come:
-* User management
-* File and directory permission
-* Packages
+* user-management
+* ownerships-and-permissions
+* processes
+* packages
 
 2.Intermediate Linux
 * Files system
